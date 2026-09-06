@@ -53,6 +53,10 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                 <span>💡</span>
                 <span>Help</span>
             </a>
+            <a href="whatsapp.php" class="nav-link-btn <?= $currentPage === 'whatsapp' ? 'active' : '' ?>" style="color: #25d366;" title="WhatsApp Ordering & Updates">
+                <span>💬</span>
+                <span>WhatsApp</span>
+            </a>
             <a href="admin/index.php" class="nav-link-btn" style="background: #1e1e2d; color: white; padding: 8px 14px; font-size: 0.85rem;" title="Access Owner & Kitchen Management">
                 <span>👑</span>
                 <span>Admin</span>
