@@ -292,6 +292,10 @@ class CartManager {
         if (addrInput && !addrInput.value) {
             addrInput.value = localStorage.getItem('foodhub_address') || 'Downtown, Flavor Ave 42, Apt 4B';
         }
+
+        if (window.authManager && typeof window.authManager.autoFillCheckout === 'function') {
+            window.authManager.autoFillCheckout();
+        }
     }
 
     submitOrder(form) {

@@ -177,6 +177,34 @@ function initMySQLSchema(PDO $db): void {
         FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants`(`id`) ON DELETE CASCADE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
 
+    // 9. Users / Customers
+    $db->exec("CREATE TABLE IF NOT EXISTS `users` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `name` VARCHAR(150) NOT NULL,
+        `email` VARCHAR(150) NOT NULL UNIQUE,
+        `phone` VARCHAR(50) NOT NULL UNIQUE,
+        `password_hash` VARCHAR(255) NULL,
+        `is_phone_verified` TINYINT(1) DEFAULT 0,
+        `is_email_verified` TINYINT(1) DEFAULT 1,
+        `default_address` TEXT NULL,
+        `avatar_url` VARCHAR(500) NULL,
+        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        `last_login` TIMESTAMP NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
+    // 10. Phone OTP Verifications
+    $db->exec("CREATE TABLE IF NOT EXISTS `phone_verifications` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `email` VARCHAR(150) NOT NULL,
+        `phone` VARCHAR(50) NOT NULL,
+        `otp_code` VARCHAR(10) NOT NULL,
+        `expires_at` DATETIME NOT NULL,
+        `is_used` TINYINT(1) DEFAULT 0,
+        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        INDEX (`phone`),
+        INDEX (`email`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
     // Check if tables need seeding
     $check = $db->query("SELECT COUNT(*) as cnt FROM `categories`")->fetch();
     if ((int)$check['cnt'] === 0) {
