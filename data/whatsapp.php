@@ -142,7 +142,7 @@ class WhatsAppService {
             $itemsSummary .= "  • {$qty}x {$name} - \${$price}\n";
         }
 
-        $trackUrl = "http://localhost:8000/track.php?order_number={$orderNo}";
+        $trackUrl = APP_URL . "/track.php?order_number={$orderNo}";
 
         $message = "🐼 *FOODHUB ORDER CONFIRMATION* 🍔\n"
                  . "━━━━━━━━━━━━━━━━━━━━━\n"
@@ -176,7 +176,7 @@ class WhatsAppService {
         $orderNo = $order['order_number'] ?? 'ORD-XXXX';
         $restaurantName = $order['restaurant_name'] ?? 'FoodHub Kitchen';
         $phone = $order['customer_phone'] ?? '';
-        $trackUrl = "http://localhost:8000/track.php?order_number={$orderNo}";
+        $trackUrl = APP_URL . "/track.php?order_number={$orderNo}";
 
         $statusMessages = [
             'confirmed' => "✅ *Order Confirmed!*\n{$restaurantName} has accepted your order `{$orderNo}` and the kitchen is getting ready.",
@@ -211,7 +211,7 @@ class WhatsAppService {
         $total = number_format((float)($order['total_amount'] ?? 0), 2);
         $restaurant = $order['restaurant_name'] ?? 'Restaurant';
         $address = $order['delivery_address'] ?? 'Address';
-        $adminUrl = "http://localhost:8000/admin/orders.php?search={$orderNo}";
+        $adminUrl = APP_URL . "/admin/orders.php?search={$orderNo}";
 
         $message = "🔔 *NEW FOOD ORDER ALERT!* 🔔\n"
                  . "━━━━━━━━━━━━━━━━━━━━━\n"
