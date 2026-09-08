@@ -1,24 +1,24 @@
 @echo off
-title FoodHub Express - Local Server (Port 8001)
+title FoodHub Express - Local Server (Port 8000)
 color 0A
 cd /d "%~dp0"
 
 echo ================================================================
-echo    🐼 FOODHUB EXPRESS - LOCAL SERVER LAUNCHER
+echo    🐼 FOODHUB EXPRESS - LOCAL SERVER LAUNCHER (PORT 8000)
 echo ================================================================
 echo.
-echo  [1/2] Launching PHP server on port 8001...
-echo        - Local URL: http://localhost:8001
-echo        - Admin URL: http://localhost:8001/admin
-echo        - Menu URL:  http://localhost:8001/menu.php
+echo  [1/2] Opening default browser to http://localhost:8000 ...
+start "" "http://localhost:8000"
 echo.
-echo  [2/2] Opening browser in 2 seconds...
+echo  [2/2] Starting PHP server on port 8000...
+echo        - Storefront: http://localhost:8000
+echo        - Dishes Menu: http://localhost:8000/menu.php
+echo        - Admin Panel: http://localhost:8000/admin
 echo.
 echo ================================================================
-echo    Press Ctrl+C at any time to stop the server.
+echo    Press Ctrl+C to stop the server at any time.
 echo ================================================================
 echo.
 
-start "" "http://localhost:8001"
-php -S 127.0.0.1:8001
+php -S 127.0.0.1:8000
 pause

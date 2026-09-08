@@ -24,7 +24,7 @@ if (!defined('APP_NAME')) {
     define('APP_NAME', 'FoodHub Express');
 }
 if (!defined('APP_PORT')) {
-    define('APP_PORT', 8001);
+    define('APP_PORT', 8000);
 }
 if (!defined('APP_URL')) {
     $host = $_SERVER['HTTP_HOST'] ?? ('localhost:' . APP_PORT);
