@@ -45,6 +45,10 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                 <span>🍽️</span>
                 <span>Menu</span>
             </a>
+            <a href="orders.php" class="nav-link-btn <?= $currentPage === 'orders' ? 'active' : '' ?>">
+                <span>🛍️</span>
+                <span>Orders</span>
+            </a>
             <a href="deals.php" class="nav-link-btn deals-btn <?= $currentPage === 'deals' ? 'active' : '' ?>">
                 <span>🏷️</span>
                 <span>Deals</span>
