@@ -57,7 +57,6 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
                 <span>👑</span>
                 <span>Admin</span>
             </a>
-            <div id="userNavAuthContainer"></div>
             <button type="button" class="cart-trigger-btn" id="openCartDrawerBtn">
                 <span>🛍️</span>
                 <span>Cart</span>

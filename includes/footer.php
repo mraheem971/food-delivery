@@ -63,7 +63,6 @@
 <?php require_once __DIR__ . '/cart_drawer.php'; ?>
 <?php require_once __DIR__ . '/dish_modal.php'; ?>
 <?php require_once __DIR__ . '/support_modal.php'; ?>
-<?php require_once __DIR__ . '/auth_modal.php'; ?>
 
 <!-- Toast Container -->
 <div class="toast-container"></div>
@@ -73,7 +72,6 @@
 <script src="assets/js/cart.js"></script>
 <script src="assets/js/modal.js"></script>
 <script src="assets/js/support.js"></script>
-<script src="assets/js/auth.js"></script>
 
 </body>
 </html>
